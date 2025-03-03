@@ -1,4 +1,1 @@
-## CSS Modules
-
-CSS Modules는 각 CSS 파일을 특정 컴포넌트에서만 사용할 수 있도록 범위를 한정하는 방식이야.
-즉, 클래스 이름이 자동으로 유니크한 값으로 변환되기 때문에, 전역 스타일 충돌 없이 안전하게 사용할 수 있어!
+## Link : https://yujini-kim.github.io/React-todo-list/
