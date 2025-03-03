@@ -94,7 +94,6 @@ function App() {
                         width: "14px",
                         height: "14px",
                         color: "#ff7e5f",
-                        height: "20px",
                       }}
                       dataSlot="icon"
                       fill="currentColor"
