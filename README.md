@@ -27,20 +27,27 @@ JSON.parse() 오류 방지를 위해 유효성 검사를 추가하였습니다.
 
 ## 🛠 사용 기술
 
-React (useState, useEffect)
-LocalStorage (데이터 영구 저장)
-Component 기반 구조 (Form, TodoList, Editing)
+React (useState, useEffect),
+LocalStorage (데이터 영구 저장),
+Component 기반 구조 (Form, TodoList, Editing),
 CSS 스타일링
 
 ## 📂 프로젝트 구조
 
 📂 src
+
 ├── 📄 App.js # 메인 컴포넌트
+
 ├── 📂 components # UI 컴포넌트 폴더
+
 │ ├── 📄 form.js # 입력 폼
+
 │ ├── 📄 todoList.js # 할 일 목록
+
 │ ├── 📄 editing.js # 수정 입력 필드
+
 ├── 📄 App.css # 스타일 파일
+
 ├── 📄 index.js # React 엔트리 포인트
 
 ## ✅ 향후 개선 사항
