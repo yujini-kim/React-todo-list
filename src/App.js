@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Editing from "./components/editing";
 import TodoList from "./components/todolist";
@@ -10,17 +10,32 @@ function App() {
   const [editingIndex, setEditingIndex] = useState(null);
   const [editingText, setEditingText] = useState("");
 
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("toDos");
+    try {
+      setToDos(storedTodos ? JSON.parse(storedTodos) : []);
+    } catch (error) {
+      console.error("에러", error);
+      setToDos([]);
+    }
+  }, []);
+
   const onChange = (e) => setToDo(e.target.value);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (toDo.trim() === "") return;
-    setToDos([...toDos, toDo]);
+    const updatedTodos = [...toDos, toDo];
+
+    setToDos(updatedTodos);
+    localStorage.setItem("toDos", JSON.stringify(updatedTodos));
     setToDo("");
   };
 
   const deleteBtn = (idx) => {
-    setToDos(toDos.filter((_, index) => index !== idx));
+    const updatedTodos = toDos.filter((_, index) => index !== idx);
+    setToDos(updatedTodos);
+    localStorage.setItem("toDos", JSON.stringify(updatedTodos));
   };
 
   const editBtn = (idx) => {
@@ -34,6 +49,7 @@ function App() {
     const updatedTodos = [...toDos];
     updatedTodos[idx] = editingText;
     setToDos(updatedTodos);
+    localStorage.setItem("toDos", JSON.stringify(updatedTodos));
     setEditingIndex(null);
   };
 
